@@ -1,0 +1,69 @@
+@import "variables";
+@import "mixins";
+* {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  text-decoration: none;
+  font-family: "Bankinter-Sans";
+  outline: 0;
+  line-height: 1;
+  color: $color-black;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Bankinter-Text";
+}
+h1 {
+  font-size: $base * 5px;
+  padding-bottom: $base * 2px;
+  margin-bottom: $base * 3px;
+  font-weight: 600;
+  color: $color-primary;
+  span {
+    font-size: $base * 2px;
+    color: $color-black;
+    font-weight: 400;
+    display: block;
+    font-family: "Bankinter-Sans";
+  }
+}
+h2 {
+  font-size: $base * 4px;
+  margin-bottom: $base * 2px;
+  text-align: center;
+}
+h3 {
+  font-size: $base * 3px;
+  margin-bottom: $base * 2px;
+  text-align: center;
+}
+h4 {
+  font-size: $base * 2px;
+  margin-bottom: $base * 1px;
+}
+p {
+  color: $color-black;
+}
+a {
+  color: $color-black;
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+button {
+  padding: $base * 1.5px $base * 4px;
+  border: 2px solid $color-primary;
+  // background-color: $color-primary;
+  position: relative;
+  border-radius: $base * 0.5px;
+  font-size: $base * 2px;
+  transition: background 300ms;
+  &:hover {
+    @include background-opacity($color-primary, 0.8);
+  }
+}

@@ -1,0 +1,9 @@
+@import "variables";
+@import "mixins";
+
+header {
+  @include padding-frame();
+  position: sticky;
+  top: 0px;
+  background-color: $color-gray-light;
+}

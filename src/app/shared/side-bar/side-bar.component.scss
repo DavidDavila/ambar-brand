@@ -1,0 +1,79 @@
+@import "variables";
+@import "mixins";
+
+nav {
+  height: 100%;
+  width: 100%;
+  padding-top: 19px;
+  padding-left: 8px;
+  background-color: $color-background;
+  .logo {
+    font-family: "Bankinter-Text";
+    padding-left: $base * 1px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: bolder;
+    flex-wrap: wrap;
+    img {
+      height: $base * 3px;
+      margin-right: calc($base / 2) * 1px;
+    }
+    span {
+      font-size: $base * 3.5px;
+      background: -webkit-linear-gradient(
+        left,
+        $color-secondary,
+        $color-primary
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+    }
+    p {
+      margin-top: $base * 1px;
+      color: $color-primary;
+      flex: 0 100%;
+      font-weight: 100;
+      font-size: 12px;
+      font-family: "Bankinter-Sans";
+    }
+  }
+  ul {
+    margin-top: $base * 4px;
+    li {
+      a {
+        line-height: $base * 5px;
+        padding-left: $base * 1.5px;
+        border-radius: 2px 0 0 2px;
+        font-size: $base * 2px;
+        position: relative;
+        display: block;
+        color: $color-white;
+        overflow: hidden;
+        &:hover {
+          @include background-opacity($color-white, 0.1);
+        }
+        &.selected {
+          @include background-opacity($color-white, 0.25);
+          padding-left: $base * 2px;
+
+          &:before {
+            overflow: hidden;
+            position: absolute;
+            width: calc($base / 2) * 1px;
+            height: 100%;
+            left: 1px;
+            top: 0;
+            border-radius: 2px 0 0 2px;
+            background: transparent;
+            display: none;
+            content: "";
+            display: block;
+            @include background-animation;
+          }
+        }
+      }
+    }
+  }
+}

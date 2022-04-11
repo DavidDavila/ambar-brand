@@ -1,0 +1,11 @@
+<section @fade>
+  <article>
+    <h3>{{ (steps$ | async)?.message }}</h3>
+
+    <ul>
+      <li *ngFor="let option of (steps$ | async)?.children">
+        <button (click)="selectOption(option)">{{ option.message }}</button>
+      </li>
+    </ul>
+  </article>
+</section>

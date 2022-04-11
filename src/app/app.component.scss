@@ -1,0 +1,27 @@
+@import "variables";
+@import "mixins";
+main {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 200px calc(100% - 200px);
+  grid-template-rows: 65px calc(100% - 65px);
+  gap: 0px 0px;
+  grid-template-areas:
+    "side-bar header"
+    "side-bar router-outlet";
+  ambar-header {
+    grid-area: header;
+  }
+  ambar-side-bar {
+    grid-area: side-bar;
+  }
+  router-outlet {
+    &::ng-deep + * {
+      grid-area: router-outlet;
+      height: 100%;
+      width: 100%;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}

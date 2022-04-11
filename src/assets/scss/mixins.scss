@@ -1,0 +1,38 @@
+@mixin height-without-header {
+  height: calc(100vh - $base * 11px);
+}
+@mixin padding-frame(
+  $topBottom: (
+    $base * 4px,
+  ),
+  $leftRight: (
+    $base * 4px,
+  )
+) {
+  padding-top: $topBottom;
+  padding-bottom: $topBottom;
+
+  padding-left: $leftRight;
+  padding-right: $leftRight;
+}
+
+@keyframes background-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@mixin background-animation {
+  background: linear-gradient(270deg, $color-secondary, $color-primary);
+  background-size: 500% 500%;
+  animation: background-animation 5s ease infinite;
+}
+@mixin background-opacity($color, $opacity: 0.3) {
+  background: $color; /* The Fallback */
+  background: rgba($color, $opacity);
+}

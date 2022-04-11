@@ -1,0 +1,24 @@
+@import "variables";
+section {
+  display: flex;
+  height: 100%;
+  article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h3 {
+      width: 70%;
+      margin: 0 auto $base * 4px;
+    }
+    ul {
+      display: flex;
+      width: 100%;
+      justify-content: space-evenly;
+      li {
+      }
+    }
+  }
+  div {
+    flex: 1;
+  }
+}

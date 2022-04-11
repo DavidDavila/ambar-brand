@@ -1,0 +1,19 @@
+<section>
+  <article
+    [ngClass]="{
+      presentation: !(steps$ | async),
+      questions: (steps$ | async) && !(steps$ | async)?.result,
+      result: (steps$ | async)?.result
+    }"
+  >
+    <div *ngIf="!(steps$ | async)">
+      <ambar-presentation></ambar-presentation>
+    </div>
+    <div *ngIf="(steps$ | async) && !(steps$ | async)?.result">
+      <ambar-questions></ambar-questions>
+    </div>
+    <div *ngIf="(steps$ | async)?.result">
+      <ambar-result></ambar-result>
+    </div>
+  </article>
+</section>

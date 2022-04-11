@@ -1,0 +1,8 @@
+<section @fade>
+  <h1><span>We recommend you to use a </span>{{ (steps$ | async)?.result }}</h1>
+  <article>
+    <p>More info in confluence</p>
+  </article>
+
+  <img [src]="'./assets/img/' + (steps$ | async)?.result + '.png'" alt="" />
+</section>

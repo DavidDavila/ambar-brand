@@ -1,0 +1,17 @@
+section {
+  display: flex;
+  flex-wrap: wrap;
+  h1 {
+    flex: 0 100%;
+    text-transform: capitalize;
+    span {
+      text-transform: none;
+    }
+  }
+  article {
+    flex: 0 70%;
+  }
+  img {
+    width: 30%;
+  }
+}
